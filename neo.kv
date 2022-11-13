@@ -1,0 +1,94 @@
+<MyLabel@Label>:
+    font_name: "Wavemax-ow9mV.ttf"
+    font_size: 50
+    color: 1, 1, 0, 1
+
+<MyBoxLayout>:
+        
+    abs_mag: abs_mag
+    obj_size: obj_size
+    obj_distance: obj_distance
+    obj_speed: obj_speed
+    obj_hazard: obj_hazard
+    obj_orbit: obj_orbit
+    obj_sentry: obj_sentry       
+    spacing: 10
+    padding: 10
+    orientation: "vertical"
+    canvas.before:
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            source: "asteroid.jpg"
+    MyLabel:
+        text: "Near Earth Object Daily Tracker"
+        font_size: 60
+        color: 1, 0, 0, 1
+    BoxLayout:            
+        MyLabel:
+            text: "Absolute Magnitude"
+            size_hint: (.5, 1/9)
+        MyLabel:
+            id: abs_mag
+            text: ""
+            size_hint: (.5, 1/9)
+    BoxLayout:
+        MyLabel:
+            text: "Estimated Diameter"
+            size_hint: (.5, 1/9)
+        MyLabel:
+            id: obj_size
+            text: "" 
+            size_hint: (.5, 1/9)
+    BoxLayout:  
+        MyLabel:
+            text: "Miss Distance"
+            size_hint: (.5, 1/9)
+        MyLabel:
+            id: obj_distance
+            text: "" 
+            size_hint: (.5, 1/9)
+    BoxLayout:  
+        MyLabel:
+            text: "Velocity"
+            size_hint: (.5, 1/9)
+        MyLabel:
+            id: obj_speed
+            text: "" 
+            size_hint: (.5, 1/9)
+    BoxLayout:  
+        MyLabel:
+            text: "Hazardous"
+            size_hint: (.5, 1/9)
+        MyLabel:
+            id: obj_hazard
+            text: ""
+            size_hint: (.5, 1/9)
+    BoxLayout:  
+        MyLabel:
+            text: "Orbiting"
+            size_hint: (.5, 1/9)
+        MyLabel:
+            id: obj_orbit
+            text: "" 
+            size_hint: (.5, 1/9)
+    BoxLayout:  
+        MyLabel:
+            text: "Sentry Object"
+            size_hint: (.5, 1/9)
+        MyLabel:
+            id: obj_sentry
+            text: ""
+            size_hint: (.5, 1/9)
+    Label:
+        size_hint: (1, 1/11)
+    MySpinner:
+        id: object_spinner_id
+        size_hint: (1, None)
+        text: "Select a Near Earth Object"
+        font_name: "Wavemax-ow9mV.ttf"
+        font_size: 30
+        color: 1, 1, 1, 1
+        background_color: 1, 1, 0, 1
+        on_text: root.spinner_clicked(object_spinner_id.text)
+            
